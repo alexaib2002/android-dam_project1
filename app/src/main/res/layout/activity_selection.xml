@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectionActivity">
+
+    <TextView
+        android:id="@+id/txtTitleSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_widget_border"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:text="@string/txt_title_selection"
+        android:textSize="@dimen/std_title_font_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flowCountryListSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_widget_border"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:layout_marginEnd="@dimen/std_widget_border"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayoutSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleSelect" />
+
+    <LinearLayout
+        android:id="@+id/bottomLayoutSelect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_widget_border"
+        android:layout_marginEnd="@dimen/std_widget_border"
+        android:layout_marginBottom="@dimen/std_widget_border"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/std_widget_border">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_select_country"
+                android:textSize="@dimen/std_form_font_size" />
+
+            <EditText
+                android:id="@+id/txtEditCountrySelect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/txt_select_country_hint"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:autofillHints="country, selection" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="@dimen/std_widget_border">
+
+            <Button
+                android:id="@+id/btnAcceptSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_accept" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5" />
+
+            <Button
+                android:id="@+id/btnCancelSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_cancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

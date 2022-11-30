@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QueryActivity">
+
+    <TextView
+        android:id="@+id/txtTitleQuery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_widget_border"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:text="@string/txt_title_query"
+        android:textSize="@dimen/std_title_font_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtEditCountryQuery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_widget_border"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:ems="10"
+        android:hint="@string/txt_select_country_hint"
+        android:inputType="textPersonName"
+        android:minHeight="@dimen/std_touch_target"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleQuery"
+        android:autofillHints="country, selection"/>
+
+    <Button
+        android:id="@+id/btnCountryQuery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_widget_border"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:layout_marginEnd="@dimen/std_widget_border"
+        android:text="@string/btn_insert_sel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtEditCountryQuery"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleQuery" />
+</androidx.constraintlayout.widget.ConstraintLayout>

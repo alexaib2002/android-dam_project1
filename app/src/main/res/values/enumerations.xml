@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Array-->
+    <array name="enum_insert_phases">
+        <item>Grupos</item>
+        <item>Octavos</item>
+        <item>Cuartos</item>
+        <item>Semifinales</item>
+        <item>Tercer Puesto</item>
+        <item>Final</item>
+    </array>
+</resources>

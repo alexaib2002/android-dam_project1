@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ResultadosMundial</string>
+    <string name="btn_start_insertion">Registrar resultado</string>
+    <string name="btn_start_query">Consultar resultados</string>
+    <string name="content_desc_start_logo">Fifa World Cup Logo</string>
+    <string name="txt_title_insert">Introducir resultado</string>
+    <string name="txt_title_selection">Selección de equipo</string>
+    <string name="txt_title_query">Consulta de resultados por país</string>
+    <string name="txt_field_date">Introduce la fecha</string>
+    <string name="txt_insert_field_phase">Introduce la fase</string>
+    <string name="txt_insert_field_team1">Selecciona el equipo 1</string>
+    <string name="txt_insert_field_team2">Selecciona el equipo 2</string>
+    <string name="btn_insert_save_res">Guardar resultado</string>
+    <string name="btn_insert_clean_fields">Limpiar datos</string>
+    <string name="hint_insert_date">dd/mm/yyyy hh:mm</string>
+    <string name="btn_insert_sel">Seleccionar</string>
+    <string name="txt_insert_goals_input">Resultados del partido</string>
+    <string name="btn_accept">Aceptar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="txt_select_country">Introduce el país seleccionado</string>
+    <string name="txt_select_country_hint">Selecciona un pais...</string>
+</resources>
