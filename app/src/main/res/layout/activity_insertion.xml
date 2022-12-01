@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/hint_insert_date"
-                    android:inputType="textPersonName"
+                    android:inputType="date|time"
                     android:minHeight="48dp" />
 
             </LinearLayout>
@@ -220,13 +220,13 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/btnAcceptSelect"
+            android:id="@+id/btnSaveInsert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_insert_save_res" />
 
         <Button
-            android:id="@+id/btnCancelSelect"
+            android:id="@+id/btnClearInsert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_insert_clean_fields" />
