@@ -1,8 +1,5 @@
 package com.dam.resultadosmundial;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.widget.Button;
 
 public class QueryActivity extends TraversableActivity {

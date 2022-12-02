@@ -1,18 +1,15 @@
 package com.dam.resultadosmundial;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
 public class InsertionActivity extends TraversableActivity {
 
@@ -33,7 +30,7 @@ public class InsertionActivity extends TraversableActivity {
     private Button btnSaveInsert;
     private Button btnClearInsert;
 
-    private View.OnClickListener btnClearInsertListener = v -> {
+    private final View.OnClickListener btnClearInsertListener = v -> {
         txtEditDateInsert.setText("");
         txtEditTimeInsert.setText("");
         spinPhaseInsert.setSelection(0);
@@ -43,7 +40,7 @@ public class InsertionActivity extends TraversableActivity {
         txtEditGoalT2Insert.setText("");
     };
 
-    private ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
+    private final ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == SelectionActivity.RESULT_ACCEPTED) {
                     assert result.getData() != null;

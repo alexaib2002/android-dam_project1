@@ -9,4 +9,39 @@
         <item>Tercer Puesto</item>
         <item>Final</item>
     </array>
+    <!--Selection array-->
+    <string-array name="enum_team_names">
+        <item>Alemania</item>
+        <item>Arabia Saudí</item>
+        <item>Argentina</item>
+        <item>Australia</item>
+        <item>Bélgica</item>
+        <item>Brasil</item>
+        <item>Camerún</item>
+        <item>Canadá</item>
+        <item>Corea del Sur</item>
+        <item>Costa Rica</item>
+        <item>Croacia</item>
+        <item>Dinamarca</item>
+        <item>Ecuador</item>
+        <item>España</item>
+        <item>Estados Unidos</item>
+        <item>Francia</item>
+        <item>Gales</item>
+        <item>Ghana</item>
+        <item>Holanda</item>
+        <item>Inglaterra</item>
+        <item>Irán</item>
+        <item>Japón</item>
+        <item>Marruecos</item>
+        <item>México</item>
+        <item>Polonia</item>
+        <item>Portugal</item>
+        <item>Qatar</item>
+        <item>Senegal</item>
+        <item>Serbia</item>
+        <item>Suiza</item>
+        <item>Túnez</item>
+        <item>Uruguay</item>
+    </string-array>
 </resources>

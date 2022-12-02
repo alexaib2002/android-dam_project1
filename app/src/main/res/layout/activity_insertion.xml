@@ -65,7 +65,8 @@
                         android:hint="@string/hint_insert_date"
                         android:inputType="date"
                         android:minHeight="@dimen/std_touch_target"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:importantForAutofill="no" />
 
                     <EditText
                         android:id="@+id/txtEditTimeInsert"
@@ -80,7 +81,8 @@
                         android:hint="@string/hint_insert_time"
                         android:inputType="time"
                         android:minHeight="@dimen/std_touch_target"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:importantForAutofill="no" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -144,7 +146,8 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="@string/btn_insert_sel" />
+                        android:text="@string/btn_insert_sel"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -215,11 +218,11 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:hint="@string/hint_goal_default"
+                        android:importantForAutofill="no"
                         android:inputType="numberSigned"
                         android:textAlignment="center"
                         android:textSize="@dimen/std_goal_font_size"
-                        tools:ignore="SpeakableTextPresentCheck"
-                        android:importantForAutofill="no" />
+                        tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -239,7 +242,8 @@
                         android:inputType="numberSigned"
                         android:textAlignment="center"
                         android:textSize="@dimen/std_goal_font_size"
-                        tools:ignore="SpeakableTextPresentCheck" />
+                        tools:ignore="SpeakableTextPresentCheck"
+                        android:importantForAutofill="no" />
                 </LinearLayout>
             </LinearLayout>
 

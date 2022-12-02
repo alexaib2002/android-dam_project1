@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootSelect"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectionActivity">
@@ -20,11 +21,17 @@
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flowCountryListSelect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/std_widget_border"
         android:layout_marginTop="@dimen/std_widget_border"
         android:layout_marginEnd="@dimen/std_widget_border"
+        android:orientation="horizontal"
+        app:flow_horizontalAlign="start"
+        app:flow_horizontalStyle="packed"
+        app:flow_verticalAlign="top"
+        app:flow_verticalStyle="packed"
+        app:flow_wrapMode="aligned"
         app:layout_constraintBottom_toTopOf="@+id/bottomLayoutSelect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,11 +65,11 @@
                 android:id="@+id/txtEditCountrySelect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints="country, selection"
                 android:ems="10"
                 android:hint="@string/txt_select_country_hint"
                 android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:autofillHints="country, selection" />
+                android:minHeight="48dp" />
 
         </LinearLayout>
 
