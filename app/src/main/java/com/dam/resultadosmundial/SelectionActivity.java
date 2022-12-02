@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 
 import androidx.constraintlayout.helper.widget.Flow;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -13,8 +14,6 @@ public class SelectionActivity extends TraversableActivity {
     public static final int RESULT_CANCELLED = 0;
     public static final int RESULT_ACCEPTED = 1;
 
-    private ConstraintLayout rootSelect;
-    private Flow flowCountryListSelect;
     private EditText txtEditCountrySelect;
     private Button btnAcceptSelect;
     private Button btnCancelSelect;
@@ -25,13 +24,12 @@ public class SelectionActivity extends TraversableActivity {
 
     @Override
     protected void initActivityLayout() {
-        rootSelect = findViewById(R.id.rootSelect);
-        flowCountryListSelect = findViewById(R.id.flowCountryListSelect);
+        ConstraintLayout scrollViewRootSelect = findViewById(R.id.scrollViewRootSelect);
+        Flow flowCountryListSelect = findViewById(R.id.flowCountryListSelect);
         txtEditCountrySelect = findViewById(R.id.txtEditCountrySelect);
         btnAcceptSelect = findViewById(R.id.btnAcceptSelect);
         btnCancelSelect = findViewById(R.id.btnCancelSelect);
         // append teams to flow layout
-        int i = 0;
         for (String teamName:
              getResources().getStringArray(R.array.enum_team_names)) {
             Button btnTeam = new Button(this);
@@ -44,7 +42,7 @@ public class SelectionActivity extends TraversableActivity {
             // make btnTeam borderless style
             btnTeam.setBackgroundResource(android.R.color.transparent);
             btnTeam.setOnClickListener(v -> txtEditCountrySelect.setText(teamName));
-            rootSelect.addView(btnTeam, 0);
+            scrollViewRootSelect.addView(btnTeam, 0);
             flowCountryListSelect.addView(btnTeam);
         }
     }
