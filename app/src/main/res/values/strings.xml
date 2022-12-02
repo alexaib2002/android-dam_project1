@@ -22,4 +22,7 @@
     <string name="hint_insert_time">hh:mm</string>
     <string name="hint_goal_default">0</string>
     <string name="txt_separator">-</string>
+    <string name="txt_snackbar_insert_ok">Partido guardado correctamente</string>
+    <string name="txt_snackbar_insert_fail">Por favor, revisa los campos que están mal introducidos</string>
+    <string name="txt_error_empty_field">El campo debe ser rellenado</string>
 </resources>

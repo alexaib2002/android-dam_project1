@@ -1,9 +1,12 @@
 package com.dam.resultadosmundial;
 
 import android.os.Bundle;
+import android.view.Window;
 
 import androidx.annotation.LayoutRes;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Objects;
 
 public abstract class TraversableActivity extends AppCompatActivity {
 
@@ -14,14 +17,20 @@ public abstract class TraversableActivity extends AppCompatActivity {
         this.layoutId = layoutId;
     }
 
+    abstract protected void initActivityLayout();
+    abstract protected void initListeners();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initProps();
         setContentView(layoutId);
         initActivityLayout();
         initListeners();
     }
 
-    abstract protected void initActivityLayout();
-    abstract protected void initListeners();
+    private void initProps() {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        Objects.requireNonNull(getSupportActionBar()).hide();
+    }
 }

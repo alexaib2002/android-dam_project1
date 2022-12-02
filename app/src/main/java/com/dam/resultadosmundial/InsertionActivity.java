@@ -10,14 +10,18 @@ import android.widget.Spinner;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class InsertionActivity extends TraversableActivity {
+import com.google.android.material.snackbar.Snackbar;
+
+public class InsertionActivity extends TraversableActivity implements ValidatableActivity {
 
     public static final String KEY_COUNTRY_SELECTED = "CountrySelected";
     public static final String KEY_TEAM_SELECTED = "TeamSelected";
     public static final String VALUE_TEAM1_SELECTED = "Team1";
     public static final String VALUE_TEAM2_SELECTED = "Team2";
 
+    private ConstraintLayout rootInsert;
     private EditText txtEditDateInsert;
     private EditText txtEditTimeInsert;
     private Spinner spinPhaseInsert;
@@ -62,6 +66,7 @@ public class InsertionActivity extends TraversableActivity {
 
     @Override
     protected void initActivityLayout() {
+        rootInsert = findViewById(R.id.rootInsert);
         txtEditDateInsert = findViewById(R.id.txtEditDateInsert);
         txtEditTimeInsert = findViewById(R.id.txtEditTimeInsert);
         spinPhaseInsert = findViewById(R.id.spinPhaseInsert);
@@ -80,7 +85,7 @@ public class InsertionActivity extends TraversableActivity {
         };
         txtEditDateInsert.setOnClickListener(v -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, dateSetListener,
-                    2021, 0, 1);
+                    2022, 0, 1);
             datePickerDialog.show();
         });
         TimePickerDialog.OnTimeSetListener timeSetListener = (view, hourOfDay, minute) -> {
@@ -107,9 +112,46 @@ public class InsertionActivity extends TraversableActivity {
             resultLauncher.launch(intent);
         });
         btnSaveInsert.setOnClickListener(v -> {
-            System.err.println("Saving not implemented");
-            btnClearInsertListener.onClick(v);
+            if (validateFields()) {
+                Snackbar.make(v, R.string.txt_snackbar_insert_ok, Snackbar.LENGTH_SHORT).show();
+                btnClearInsertListener.onClick(v);
+            }
+            else {
+                // create snack bar to show error
+                Snackbar.make(v, R.string.txt_snackbar_insert_fail, Snackbar.LENGTH_SHORT)
+                        .show();
+            }
         });
         btnClearInsert.setOnClickListener(btnClearInsertListener);
+    }
+
+    @Override
+    public boolean validateFields() {
+        boolean valid = true;
+        if (txtEditDateInsert.getText().toString().isEmpty()) {
+            txtEditDateInsert.setError(getString(R.string.txt_error_empty_field));
+            valid = false;
+        } else
+            txtEditDateInsert.setError(null);
+        if (txtEditTimeInsert.getText().toString().isEmpty()) {
+            txtEditTimeInsert.setError(getString(R.string.txt_error_empty_field));
+            valid = false;
+        } else
+            txtEditTimeInsert.setError(null);
+        if (txtEditTeam1Insert.getText().toString().isEmpty()) {
+            txtEditTeam1Insert.setError(getString(R.string.txt_error_empty_field));
+            valid = false;
+        } else
+            txtEditTeam1Insert.setError(null);
+        if (txtEditTeam2Insert.getText().toString().isEmpty()) {
+            txtEditTeam2Insert.setError(getString(R.string.txt_error_empty_field));
+            valid = false;
+        } else
+            txtEditTeam2Insert.setError(null);
+        if (txtEditGoalT1Insert.getText().toString().isEmpty()
+                || txtEditGoalT2Insert.getText().toString().isEmpty()) {
+            valid = false;
+        }
+        return valid;
     }
 }

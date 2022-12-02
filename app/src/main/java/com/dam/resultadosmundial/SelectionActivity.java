@@ -41,9 +41,9 @@ public class SelectionActivity extends TraversableActivity {
             ));
             btnTeam.setText(teamName);
             btnTeam.setId(View.generateViewId());
-            btnTeam.setOnClickListener(v -> {
-                txtEditCountrySelect.setText(teamName);
-            });
+            // make btnTeam borderless style
+            btnTeam.setBackgroundResource(android.R.color.transparent);
+            btnTeam.setOnClickListener(v -> txtEditCountrySelect.setText(teamName));
             rootSelect.addView(btnTeam, 0);
             flowCountryListSelect.addView(btnTeam);
         }
