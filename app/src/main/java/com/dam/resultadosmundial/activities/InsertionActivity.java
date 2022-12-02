@@ -1,4 +1,4 @@
-package com.dam.resultadosmundial;
+package com.dam.resultadosmundial.activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -12,7 +12,9 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.dam.resultadosmundial.javabeans.MatchResult;
+import com.dam.resultadosmundial.R;
+import com.dam.resultadosmundial.interfaces.ValidatableActivity;
+import com.dam.resultadosmundial.model.MatchResult;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;

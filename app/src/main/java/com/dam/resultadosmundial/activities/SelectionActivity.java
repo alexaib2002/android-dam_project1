@@ -1,13 +1,14 @@
-package com.dam.resultadosmundial;
+package com.dam.resultadosmundial.activities;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ScrollView;
 
 import androidx.constraintlayout.helper.widget.Flow;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.dam.resultadosmundial.R;
 
 public class SelectionActivity extends TraversableActivity {
 

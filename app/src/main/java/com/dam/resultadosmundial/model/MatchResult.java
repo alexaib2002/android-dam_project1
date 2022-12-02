@@ -1,4 +1,4 @@
-package com.dam.resultadosmundial.javabeans;
+package com.dam.resultadosmundial.model;
 
 import java.io.Serializable;
 

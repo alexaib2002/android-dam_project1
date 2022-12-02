@@ -5,7 +5,7 @@
     android:id="@+id/rootInsert"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InsertionActivity">
+    tools:context=".activities.InsertionActivity">
 
     <TextView
         android:id="@+id/txtTitleInsert"

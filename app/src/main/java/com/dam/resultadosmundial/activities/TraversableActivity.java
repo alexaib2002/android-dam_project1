@@ -1,4 +1,4 @@
-package com.dam.resultadosmundial;
+package com.dam.resultadosmundial.activities;
 
 import android.os.Bundle;
 import android.view.Window;

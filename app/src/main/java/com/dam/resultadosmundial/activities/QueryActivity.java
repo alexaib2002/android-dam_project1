@@ -1,8 +1,9 @@
-package com.dam.resultadosmundial;
+package com.dam.resultadosmundial.activities;
 
 import android.widget.Button;
 
-import com.dam.resultadosmundial.javabeans.MatchResult;
+import com.dam.resultadosmundial.R;
+import com.dam.resultadosmundial.model.MatchResult;
 
 import java.util.ArrayList;
 

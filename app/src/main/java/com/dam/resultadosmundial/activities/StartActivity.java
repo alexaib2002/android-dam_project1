@@ -1,4 +1,4 @@
-package com.dam.resultadosmundial;
+package com.dam.resultadosmundial.activities;
 
 import android.content.Intent;
 import android.widget.Button;
@@ -6,7 +6,8 @@ import android.widget.Button;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 
-import com.dam.resultadosmundial.javabeans.MatchResult;
+import com.dam.resultadosmundial.R;
+import com.dam.resultadosmundial.model.MatchResult;
 
 import java.util.ArrayList;
 
