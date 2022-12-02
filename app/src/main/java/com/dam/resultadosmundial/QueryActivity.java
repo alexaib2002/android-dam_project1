@@ -2,6 +2,10 @@ package com.dam.resultadosmundial;
 
 import android.widget.Button;
 
+import com.dam.resultadosmundial.javabeans.MatchResult;
+
+import java.util.ArrayList;
+
 public class QueryActivity extends TraversableActivity {
 
     private Button btnCountryQuery;
@@ -18,7 +22,8 @@ public class QueryActivity extends TraversableActivity {
     @Override
     protected void initListeners() {
         btnCountryQuery.setOnClickListener(v -> {
-
+            System.err.println("Not implemented yet :(");
+            System.out.println((ArrayList<MatchResult>) getIntent().getSerializableExtra(StartActivity.KEY_MATCH_LIST));
         });
     }
 }

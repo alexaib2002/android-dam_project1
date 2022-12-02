@@ -12,7 +12,10 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.dam.resultadosmundial.javabeans.MatchResult;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 public class InsertionActivity extends TraversableActivity implements ValidatableActivity {
 
@@ -20,6 +23,8 @@ public class InsertionActivity extends TraversableActivity implements Validatabl
     public static final String KEY_TEAM_SELECTED = "TeamSelected";
     public static final String VALUE_TEAM1_SELECTED = "Team1";
     public static final String VALUE_TEAM2_SELECTED = "Team2";
+    public static final int RESULT_SAVED = 1;
+    public static final int RESULT_UNDEFINED = -1;
 
     private ConstraintLayout rootInsert;
     private EditText txtEditDateInsert;
@@ -114,10 +119,19 @@ public class InsertionActivity extends TraversableActivity implements Validatabl
         btnSaveInsert.setOnClickListener(v -> {
             if (validateFields()) {
                 Snackbar.make(v, R.string.txt_snackbar_insert_ok, Snackbar.LENGTH_SHORT).show();
-                btnClearInsertListener.onClick(v);
+                ArrayList<MatchResult> matchResults = ((ArrayList<MatchResult>) getIntent()
+                        .getSerializableExtra(StartActivity.KEY_MATCH_LIST));
+                matchResults.add(new MatchResult(txtEditDateInsert.getText().toString(),
+                        txtEditTimeInsert.getText().toString(),
+                        spinPhaseInsert.getSelectedItem().toString(),
+                        txtEditTeam1Insert.getText().toString(),
+                        txtEditTeam2Insert.getText().toString(),
+                        Integer.parseInt(txtEditGoalT1Insert.getText().toString()),
+                        Integer.parseInt(txtEditGoalT2Insert.getText().toString())));
+                getIntent().putExtra(StartActivity.KEY_MATCH_LIST, matchResults);
+                setResult(RESULT_SAVED, getIntent());
             }
             else {
-                // create snack bar to show error
                 Snackbar.make(v, R.string.txt_snackbar_insert_fail, Snackbar.LENGTH_SHORT)
                         .show();
             }
