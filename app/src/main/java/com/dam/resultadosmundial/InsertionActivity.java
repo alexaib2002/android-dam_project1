@@ -4,10 +4,13 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -18,7 +21,8 @@ public class InsertionActivity extends TraversableActivity {
     public static final String VALUE_TEAM1_SELECTED = "Team1";
     public static final String VALUE_TEAM2_SELECTED = "Team2";
 
-    private EditText txtEditDate;
+    private EditText txtEditDateInsert;
+    private EditText txtEditTimeInsert;
     private Spinner spinPhaseInsert;
     private EditText txtEditTeam1Insert;
     private EditText txtEditTeam2Insert;
@@ -30,7 +34,8 @@ public class InsertionActivity extends TraversableActivity {
     private Button btnClearInsert;
 
     private View.OnClickListener btnClearInsertListener = v -> {
-        txtEditDate.setText("");
+        txtEditDateInsert.setText("");
+        txtEditTimeInsert.setText("");
         spinPhaseInsert.setSelection(0);
         txtEditTeam1Insert.setText("");
         txtEditTeam2Insert.setText("");
@@ -60,7 +65,8 @@ public class InsertionActivity extends TraversableActivity {
 
     @Override
     protected void initActivityLayout() {
-        txtEditDate = findViewById(R.id.txtEditDate);
+        txtEditDateInsert = findViewById(R.id.txtEditDateInsert);
+        txtEditTimeInsert = findViewById(R.id.txtEditTimeInsert);
         spinPhaseInsert = findViewById(R.id.spinPhaseInsert);
         txtEditTeam1Insert = findViewById(R.id.txtEditTeam1Insert);
         txtEditTeam2Insert = findViewById(R.id.txtEditTeam2Insert);
@@ -70,6 +76,25 @@ public class InsertionActivity extends TraversableActivity {
         btnClearInsert = findViewById(R.id.btnClearInsert);
         btnSelectTeam1Insert = findViewById(R.id.btnSelectTeam1Insert);
         btnSelectTeam2Insert = findViewById(R.id.btnSelectTeam2Insert);
+        // initialize pickers
+        DatePickerDialog.OnDateSetListener dateSetListener = (view, year, month, dayOfMonth) -> {
+            String date = dayOfMonth + "/" + (month + 1) + "/" + year;
+            txtEditDateInsert.setText(date);
+        };
+        txtEditDateInsert.setOnClickListener(v -> {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, dateSetListener,
+                    2021, 0, 1);
+            datePickerDialog.show();
+        });
+        TimePickerDialog.OnTimeSetListener timeSetListener = (view, hourOfDay, minute) -> {
+            String time = hourOfDay + ":" + minute;
+            txtEditTimeInsert.setText(time);
+        };
+        txtEditTimeInsert.setOnClickListener(v -> {
+            TimePickerDialog timePickerDialog = new TimePickerDialog(this, timeSetListener,
+                    0, 0, true);
+            timePickerDialog.show();
+        });
     }
 
     @Override

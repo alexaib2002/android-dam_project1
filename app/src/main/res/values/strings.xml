@@ -12,11 +12,14 @@
     <string name="txt_insert_field_team2">Selecciona el equipo 2</string>
     <string name="btn_insert_save_res">Guardar resultado</string>
     <string name="btn_insert_clean_fields">Limpiar datos</string>
-    <string name="hint_insert_date">dd/mm/yyyy hh:mm</string>
+    <string name="hint_insert_date">dd/mm/yyyy</string>
     <string name="btn_insert_sel">Seleccionar</string>
     <string name="txt_insert_goals_input">Resultados del partido</string>
     <string name="btn_accept">Aceptar</string>
     <string name="btn_cancel">Cancelar</string>
     <string name="txt_select_country">Introduce el país seleccionado</string>
     <string name="txt_select_country_hint">Selecciona un pais...</string>
+    <string name="hint_insert_time">hh:mm</string>
+    <string name="hint_goal_default">0</string>
+    <string name="txt_separator">-</string>
 </resources>

@@ -6,4 +6,5 @@
     <dimen name="std_form_font_size">14sp</dimen>
     <dimen name="std_input_font_size">18sp</dimen>
     <dimen name="std_goal_font_size">48sp</dimen>
+    <dimen name="goal_input_width">64dp</dimen>
 </resources>
