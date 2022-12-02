@@ -127,8 +127,8 @@ public class InsertionActivity extends TraversableActivity implements Validatabl
                         txtEditTimeInsert.getText().toString(),
                         spinPhaseInsert.getSelectedItem().toString(),
                         txtEditTeam1Insert.getText().toString(),
-                        txtEditTeam2Insert.getText().toString(),
                         Integer.parseInt(txtEditGoalT1Insert.getText().toString()),
+                        txtEditTeam2Insert.getText().toString(),
                         Integer.parseInt(txtEditGoalT2Insert.getText().toString())));
                 getIntent().putExtra(StartActivity.KEY_MATCH_LIST, matchResults);
                 setResult(RESULT_SAVED, getIntent());
