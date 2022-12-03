@@ -18,6 +18,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/std_widget_border"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:layout_marginEnd="@dimen/std_widget_border"
+        android:layout_marginBottom="@dimen/std_widget_border"
+        app:layout_constraintBottom_toTopOf="@+id/btnCountryQuery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleQuery"
+        app:layout_constraintVertical_bias="0.517">
+
+        <LinearLayout
+            android:id="@+id/scrollLayoutQuery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
     <EditText
         android:id="@+id/txtEditCountryQuery"
         android:layout_width="wrap_content"
@@ -26,19 +46,22 @@
         android:layout_marginBottom="16dp"
         android:autofillHints="country, selection"
         android:ems="10"
+        android:focusable="false"
         android:hint="@string/txt_select_country_hint"
         android:inputType="textPersonName"
         android:minHeight="@dimen/std_touch_target"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:inputType="none" />
 
     <Button
         android:id="@+id/btnCountryQuery"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/std_widget_border"
         android:layout_marginEnd="@dimen/std_widget_border"
         android:layout_marginBottom="16dp"
+        android:minHeight="@dimen/std_touch_target"
         android:text="@string/btn_insert_sel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

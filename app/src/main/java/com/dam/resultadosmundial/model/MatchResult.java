@@ -22,4 +22,31 @@ public class MatchResult implements Serializable {
         this.score2 = score2;
     }
 
+    public String getPhase() {
+        return phase;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public String getTeam1() {
+        return team1;
+    }
+
+    public String getTeam2() {
+        return team2;
+    }
+
+    public int getScore1() {
+        return score1;
+    }
+
+    public int getScore2() {
+        return score2;
+    }
 }
