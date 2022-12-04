@@ -11,7 +11,7 @@ import java.util.Objects;
 public abstract class TraversableActivity extends AppCompatActivity {
 
     @LayoutRes
-    protected int layoutId;
+    protected final int layoutId;
 
     public TraversableActivity(@LayoutRes int layoutId) {
         this.layoutId = layoutId;

@@ -28,7 +28,6 @@ public class InsertionActivity extends TraversableActivity implements Validatabl
     public static final int RESULT_SAVED = 1;
     public static final int RESULT_UNDEFINED = -1;
 
-    private ConstraintLayout rootInsert;
     private EditText txtEditDateInsert;
     private EditText txtEditTimeInsert;
     private Spinner spinPhaseInsert;
@@ -73,7 +72,6 @@ public class InsertionActivity extends TraversableActivity implements Validatabl
 
     @Override
     protected void initActivityLayout() {
-        rootInsert = findViewById(R.id.rootInsert);
         txtEditDateInsert = findViewById(R.id.txtEditDateInsert);
         txtEditTimeInsert = findViewById(R.id.txtEditTimeInsert);
         spinPhaseInsert = findViewById(R.id.spinPhaseInsert);
@@ -85,6 +83,10 @@ public class InsertionActivity extends TraversableActivity implements Validatabl
         btnClearInsert = findViewById(R.id.btnClearInsert);
         btnSelectTeam1Insert = findViewById(R.id.btnSelectTeam1Insert);
         btnSelectTeam2Insert = findViewById(R.id.btnSelectTeam2Insert);
+    }
+
+    @Override
+    protected void initListeners() {
         // initialize pickers
         DatePickerDialog.OnDateSetListener dateSetListener = (view, year, month, dayOfMonth) -> {
             String date = dayOfMonth + "/" + (month + 1) + "/" + year;
@@ -104,10 +106,6 @@ public class InsertionActivity extends TraversableActivity implements Validatabl
                     0, 0, true);
             timePickerDialog.show();
         });
-    }
-
-    @Override
-    protected void initListeners() {
         btnSelectTeam1Insert.setOnClickListener(v -> {
             Intent intent = new Intent(this, SelectionActivity.class);
             intent.putExtra(InsertionActivity.KEY_TEAM_SELECTED, VALUE_TEAM1_SELECTED);
@@ -121,6 +119,7 @@ public class InsertionActivity extends TraversableActivity implements Validatabl
         btnSaveInsert.setOnClickListener(v -> {
             if (validateFields()) {
                 Snackbar.make(v, R.string.txt_snackbar_insert_ok, Snackbar.LENGTH_SHORT).show();
+                //noinspection unchecked
                 ArrayList<MatchResult> matchResults = ((ArrayList<MatchResult>) getIntent()
                         .getSerializableExtra(StartActivity.KEY_MATCH_LIST));
                 matchResults.add(new MatchResult(txtEditDateInsert.getText().toString(),

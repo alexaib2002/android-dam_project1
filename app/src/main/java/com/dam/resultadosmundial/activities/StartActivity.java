@@ -22,6 +22,7 @@ public class StartActivity extends TraversableActivity {
             new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == InsertionActivity.RESULT_SAVED) {
                     assert result.getData() != null;
+                    //noinspection unchecked
                     getIntent().putExtra(KEY_MATCH_LIST, (ArrayList<MatchResult>) result.getData()
                             .getSerializableExtra(KEY_MATCH_LIST));
                 }
@@ -35,7 +36,7 @@ public class StartActivity extends TraversableActivity {
     protected void initActivityLayout() {
         insertBtn = findViewById(R.id.insertBtn);
         queryBtn = findViewById(R.id.queryBtn);
-        ArrayList<MatchResult> matchResults = new ArrayList<MatchResult>();
+        ArrayList<MatchResult> matchResults = new ArrayList<>();
         loadInitialData(matchResults);
         getIntent().putExtra(KEY_MATCH_LIST, matchResults);
     }

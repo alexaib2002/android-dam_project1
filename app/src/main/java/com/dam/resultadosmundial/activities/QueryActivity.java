@@ -10,7 +10,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.dam.resultadosmundial.R;
@@ -71,6 +70,7 @@ public class QueryActivity extends TraversableActivity {
     private void queryResults() {
         String country = txtEditCountryQuery.getText().toString();
         FragmentTransaction addTransaction = getSupportFragmentManager().beginTransaction();
+        //noinspection unchecked
         ArrayList<MatchResult> matchResults = (ArrayList<MatchResult>) getIntent().getSerializableExtra(StartActivity.KEY_MATCH_LIST);
         for (MatchResult matchResult : matchResults) {
             if (matchResult.getTeam1().equals(country) || matchResult.getTeam2().equals(country)) {
