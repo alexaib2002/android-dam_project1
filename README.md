@@ -20,4 +20,5 @@ This project implements the following new functionality:
 - Replacement of FrameLayout with ConstraintLayout for Fragments.
 - App icon
 - Real data management (the requriements stated the app should simulate data management; this one instead makes use of Serializable JavaBeans and ArrayLists to move data around Insert and Query activities)
+- Date and time pickers on Insertion activity
 
