@@ -53,9 +53,12 @@ public class MatchResultFragment extends Fragment {
         ((TextView) view.findViewById(R.id.phaseResultFrag)).setText(mParam1.getPhase());
         ((TextView) view.findViewById(R.id.team1ResultFrag)).setText(mParam1.getTeam1());
         ((TextView) view.findViewById(R.id.team2ResultFrag)).setText(mParam1.getTeam2());
-        ((TextView) view.findViewById(R.id.score1ResultFrag)).setText(String.valueOf(mParam1.getScore1()));
-        ((TextView) view.findViewById(R.id.score2ResultFrag)).setText(String.valueOf(mParam1.getScore2()));
-        ((TextView) view.findViewById(R.id.dateResultFrag)).setText(mParam1.getDate());
+        ((TextView) view.findViewById(R.id.score1ResultFrag)).setText(String
+                .valueOf(mParam1.getScore1()));
+        ((TextView) view.findViewById(R.id.score2ResultFrag)).setText(String
+                .valueOf(mParam1.getScore2()));
+        ((TextView) view.findViewById(R.id.dateResultFrag)).setText(String
+                .format("%s %s", mParam1.getDate(), mParam1.getTime()));
         return view;
     }
 }
