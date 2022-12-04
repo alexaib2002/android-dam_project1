@@ -1,85 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.MatchResultFragment">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/phaseResultFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/std_widget_border"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:layout_weight="0"
+        android:hint="@string/hint_frag_mr_phase"
+        android:textSize="@dimen/std_title_font_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/phaseResultFrag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0" />
+    <TextView
+        android:id="@+id/dateResultFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/std_widget_border"
+        android:layout_weight="0"
+        android:hint="@string/hint_frag_mr_date"
+        android:textSize="@dimen/std_input_font_size"
+        app:layout_constraintBottom_toBottomOf="@+id/phaseResultFrag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/phaseResultFrag" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+    <TextView
+        android:id="@+id/team1ResultFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:layout_weight="0"
+        android:hint="@string/hint_frag_mr_team_1"
+        android:textSize="@dimen/std_title_font_size"
+        app:layout_constraintEnd_toEndOf="@+id/score1ResultFrag"
+        app:layout_constraintStart_toStartOf="@+id/score1ResultFrag"
+        app:layout_constraintTop_toBottomOf="@+id/phaseResultFrag" />
 
-        <TextView
-            android:id="@+id/dateResultFrag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0" />
+    <TextView
+        android:id="@+id/team2ResultFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:hint="@string/hint_frag_mr_team_2"
+        android:textSize="@dimen/std_title_font_size"
+        app:layout_constraintEnd_toEndOf="@+id/score2ResultFrag"
+        app:layout_constraintStart_toStartOf="@+id/score2ResultFrag"
+        app:layout_constraintTop_toTopOf="@+id/team1ResultFrag" />
 
-    </TableRow>
+    <TextView
+        android:id="@+id/score1ResultFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/std_widget_border"
+        android:layout_weight="0"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/hint_frag_mr_score_1"
+        android:textAlignment="center"
+        android:textSize="@dimen/std_goal_font_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team1ResultFrag" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="@string/txt_frag_mr_separator"
+        android:textSize="@dimen/goal_input_width"
+        app:layout_constraintBottom_toBottomOf="@+id/score1ResultFrag"
+        app:layout_constraintEnd_toStartOf="@+id/score2ResultFrag"
+        app:layout_constraintStart_toEndOf="@+id/score1ResultFrag"
+        app:layout_constraintTop_toTopOf="@+id/score1ResultFrag" />
 
-        <TextView
-            android:id="@+id/team1ResultFrag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0" />
+    <TextView
+        android:id="@+id/score2ResultFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="0"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/hint_frag_mr_score_2"
+        android:textAlignment="center"
+        android:textSize="@dimen/std_goal_font_size"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/score1ResultFrag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".5" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".5" />
-
-        <TextView
-            android:id="@+id/team2ResultFrag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/score2ResultFrag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0" />
-    </TableRow>
-
-</TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

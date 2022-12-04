@@ -25,4 +25,11 @@
     <string name="txt_snackbar_insert_ok">Partido guardado correctamente</string>
     <string name="txt_snackbar_insert_fail">Por favor, revisa los campos que están mal introducidos</string>
     <string name="txt_error_empty_field">El campo debe ser rellenado</string>
+    <string name="txt_frag_mr_separator">-</string>
+    <string name="hint_frag_mr_phase">Phase</string>
+    <string name="hint_frag_mr_date">dd/mm/yyyy hh:mm</string>
+    <string name="hint_frag_mr_team_1">Team 1</string>
+    <string name="hint_frag_mr_team_2">Team 2</string>
+    <string name="hint_frag_mr_score_1">Score 1</string>
+    <string name="hint_frag_mr_score_2">Score 2</string>
 </resources>
